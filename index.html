@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Weather API</title>
+
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="page-wrapper">
+		<h1>Weather API</h1>
+
+		<form id="latlong" action="#" method="get">
+			<input type="number" step="any" placeholder="latitude" id="latitude"  min=-90 max=90>
+			<input type="number" step="any" placeholder="longitude" id="longitude" min=-180 max=180>
+			<button type="submit">Get Weather</button>
+			<textarea id="weather" placeholder="today's weather"></textarea>
+
+		</form>
+	</div>
+
+	<script src="app.js"></script>
+</body>
+</html>
