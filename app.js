@@ -13,20 +13,11 @@ window.onload = function() {
         fetch(request).then(response => {
            return response.json();
           }).then(data => {
-            weather.value = JSON.stringify(data.currently, undefined, 4); 
+			  jsonString = JSON.stringify(data.currently.temperature + String.fromCharCode(176) + "F", undefined, 4); 
+			  weather.value = jsonString.replace(/"/g, "");
           }).catch(err => {
             console.log("this did not work");
           });
     };     
-
-    async function showToastMessage(message, timeInMs = 4000) {
-        if (message) {
-            var element = document.getElementById("toast");
-            element.innerHTML = message;
-            element.className = "show";
-            await sleep(timeInMs);
-            element.className = element.className.replace("show", "");
-        };
-    };
 }
 
